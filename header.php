@@ -9,7 +9,6 @@ $stmt->execute();
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
 <header class="header navbar-area">
     <!-- Start Topbar -->
     <div class="sticky-header">
@@ -85,7 +84,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-lg-3 col-md-3 col-7">
                     <!-- Start Header Logo -->
                     <a class="navbar-brand" href="index.php">
-                        <img src="/assets/images/logo/logo.png" alt="Logo">
+                        <img src="assets/images/logo/logo.png" alt="Logo">
                     </a>
                     <!-- End Header Logo -->
                 </div>
