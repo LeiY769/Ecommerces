@@ -27,7 +27,7 @@ if (!empty($username) && !empty($password)) {
     if ($tuple && password_verify($password, $tuple["password"])) {
         $_SESSION['username'] = $tuple["username"];
         $_SESSION['password'] = $tuple["password"];
-        $_SESSION['fore_name'] = $tuple["fore_name"];
+        $_SESSION['first_name'] = $tuple["first_name"];
         $_SESSION['last_name'] = $tuple["last_name"];
         $_SESSION['email'] = $tuple["email"];
         $_SESSION['logged_in'] = true;

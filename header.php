@@ -39,21 +39,15 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-middle">
-                            <ul class="useful-links">
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="about-us.php">About Us</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-end">
                             <div class="user">
-                                <i class="lni lni-user"></i>
                                 <?php if (isLoggedIn()): ?>
-                                    <?php echo htmlspecialchars($_SESSION['fore_name']) . ' ' . htmlspecialchars($_SESSION['last_name']); ?>
+                                    <i class="lni lni-user"></i>
+                                    <?php echo 'Hello, ' . htmlspecialchars($_SESSION['first_name']) . ' ' . htmlspecialchars($_SESSION['last_name']); ?>
                                 <?php else: ?>
-                                    Hello
                                 <?php endif; ?>
                             </div>
                             <ul class="user-login">
@@ -100,7 +94,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <option selected>All</option>
                                             <?php foreach ($categories as $category): ?>
                                                 <option value="<?php echo htmlspecialchars($category['category']); ?>">
-                                                    <?php echo htmlspecialchars($category['category']); ?>
+                                                    <?php echo ucfirst(htmlspecialchars($category['category'])); ?>
                                                 </option>
                                             <?php endforeach; ?>
                                         </select>
@@ -121,15 +115,9 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-lg-4 col-md-2 col-5">
                     <div class="right-area">
                         <div class="navbar-cart">
-                            <div class="wishlist">
-                                <a href="javascript:void(0)">
-                                    <i class="lni lni-heart"></i>
-                                    <span class="total-items">0</span>
-                                </a>
-                            </div>
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="main-btn">
-                                    <i class="lni lni-cart"></i>
+                                    🍽️
                                     <span class="total-items">2</span>
                                 </a>
                                 <!-- Shopping Item -->

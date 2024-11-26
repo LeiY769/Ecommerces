@@ -25,26 +25,6 @@ $error = $_GET['error'] ?? '';
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Registration</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Registration</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
     <!-- Start Account Register Area -->
     <div class="account-login section">
         <div class="container">
@@ -52,47 +32,47 @@ $error = $_GET['error'] ?? '';
                 <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                     <div class="register-form">
                         <div class="title">
-                            <h3>No Account? Register</h3>
-                            <p>Registration takes less than a minute but gives you full control over your orders.</p>
+                            <h3>No Account? </h3>
+                            <p>Register a new account takes a few seconds!⚡</p>
+                            <?php if ($error): ?>
+                                <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
+                            <?php endif; ?>
                         </div>
-                        <?php if ($error): ?>
-                            <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
-                        <?php endif; ?>
                         <form class="row" method="post" action="backend/register_process.php">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-fn">First Name</label>
-                                    <input class="form-control" type="text" id="reg-fn" name="fore_name" required>
+                                    <input class="form-control" type="text" id="reg-fn" name="first_name" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-ln">Last Name</label>
-                                    <input class="form-control" type="text" id="reg-ln" name="last_name" required>
+                                    <input class="form-control" type="text" id="reg-ln" name="last_name" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-email">E-mail Address</label>
-                                    <input class="form-control" type="email" id="reg-email" name="email" required>
+                                    <input class="form-control" type="text" id="reg-email" name="email" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="reg-username">username</label>
-                                    <input class="form-control" type="text" id="reg-phone" name="username" required>
+                                    <label for="reg-username">Username</label>
+                                    <input class="form-control" type="text" id="reg-phone" name="username" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-pass">Password</label>
-                                    <input class="form-control" type="password" id="reg-pass" name="password" required>
+                                    <input class="form-control" type="password" id="reg-pass" name="password" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-pass-confirm">Confirm Password</label>
-                                    <input class="form-control" type="password" id="reg-pass-confirm" name="password_confirm" required>
+                                    <input class="form-control" type="password" id="reg-pass-confirm" name="password_confirm" >
                                 </div>
                             </div>
                             <div class="button">

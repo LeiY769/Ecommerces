@@ -22,26 +22,6 @@
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">About Us</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
-                        <li>About Us</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
     <!-- Start About Area -->
     <section class="about-us section">
         <div class="container">
@@ -60,6 +40,7 @@
                         <p>At UniDeli, we are dedicated to providing the University of Liège community with the best food delivery service. Our mission is to deliver high-quality, locally-sourced food that meets the needs and expectations of students, faculty, and staff. We are committed to excellence and strive to exceed our customers' expectations in every aspect of our service.</p>
                         <p>We believe in the importance of supporting local producers and ensuring the freshness and quality of our products. By partnering with local farms and food artisans, we bring you the best of what our region has to offer. This not only guarantees the quality of our food but also supports the local economy and promotes sustainability.</p>
                         <p>UniDeli offers a convenient and reliable food delivery service that adds value to the lives of students and the university community. Whether you need a quick meal between classes, a healthy snack, or a full dinner, we have you covered. Our user-friendly platform makes it easy to order your favorite meals and have them delivered right to your doorstep.</p>
+                        <p>This section was written using AI 🪄</p>
                     </div>
                 </div>
             </div>
@@ -75,6 +56,7 @@
                     <div class="section-title">
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Core Team</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">We are a dedicated team of students from the University of Liège, passionate about providing high-quality food delivery services to our university community. Our diverse backgrounds and shared commitment to excellence drive us to continuously improve and innovate, ensuring that we meet the needs and expectations of our fellow students, faculty, and staff.</p>
+                        <p>This section was written using AI 🪄</p>
                     </div>
                 </div>
             </div>

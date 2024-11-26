@@ -5,9 +5,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
-    $fore_name = $_POST['fore_name'];
+    $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
+
+    if(empty($username) || empty($password) || empty($password_confirm) || empty($first_name) || empty($last_name) || empty($email)){
+        $error = "All field are mandatory.";
+        header("Location: ../register.php?error=" . urlencode($error));
+        exit();
+    }
+    
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $error = "You must provide a valid email address";
+        header("Location: ../register.php?error=" . urlencode($error));
+        exit();
+    }
 
     if ($password !== $password_confirm) {
         $error = "Passwords do not match.";
@@ -32,15 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert the new user into the database
-        $stmt = $conn->prepare("INSERT INTO Customer (username, password, fore_name, last_name, email) VALUES (:username, :password, :fore_name, :last_name, :email)");
+        $stmt = $conn->prepare("INSERT INTO Customer (username, password, first_name, last_name, email) VALUES (:username, :password, :first_name, :last_name, :email)");
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashed_password);
-        $stmt->bindParam(':fore_name', $fore_name);
+        $stmt->bindParam(':first_name', $first_name);
         $stmt->bindParam(':last_name', $last_name);
         $stmt->bindParam(':email', $email);
 
         if ($stmt->execute()) {
-            header("Location: ../login.php");
+            header("Location: ../login.php?success=Account created!🎉 You can now login 🥳");
             exit();
         } else {
             $error = "An error occurred. Please try again.";

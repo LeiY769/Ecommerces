@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `Customer`(
     `customer_id` BIGINT AUTO_INCREMENT PRIMARY KEY,
     `username` VARCHAR(30) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
-    `fore_name` VARCHAR(30) NOT NULL,
+    `first_name` VARCHAR(30) NOT NULL,
     `last_name` VARCHAR(30) NOT NULL,
     `email` VARCHAR(60) NOT NULL
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1;
@@ -94,7 +94,7 @@ INSERT INTO `Product`(`name`, `category`, `image`, `price`, `quantity_in_stock`,
 ('Gauffre', 'snacks', 'assets/images/products/snacks/waffel.jpg','2.5', '300', NULL),
 ('Bonbons', 'snacks', 'assets/images/products/snacks/sweet.jpg', '1.99', '200', NULL);
 
-INSERT INTO `Customer`(`username`, `password`, `fore_name`, `last_name`, `email`) VALUES
+INSERT INTO `Customer`(`username`, `password`, `first_name`, `last_name`, `email`) VALUES
 ('michel', '123', 'Michel', 'Dupont', 'michel@gmail.com');
 
 INSERT INTO `Order_table`(`customer_id`, `order_date`, `order_time`, `position`) VALUES

@@ -10,7 +10,7 @@ $connection = connect_to_db();
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>UniDeli - All you need in one place.</title>
+    <title>UniDeli - All your favorite food, from your smartphone to your classroom</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />

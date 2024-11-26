@@ -21,26 +21,6 @@
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Contact Us</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
     <!-- Start Contact Area -->
     <section id="contact-us" class="contact-us section">
         <div class="container">
@@ -49,8 +29,7 @@
                     <div class="col-12">
                         <div class="section-title">
                             <h2>Contact Us</h2>
-                            <p>There are many variations of passages of Lorem
-                                Ipsum available, but the majority have suffered alteration in some form.</p>
+                            <p>A problem with your order? No news for the delivery guy? Share us your issue!</p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +42,7 @@
                                     <i class="lni lni-map"></i>
                                     <h3>Address</h3>
                                     <ul>
-                                        <li>44 Shirley Ave. West Chicago,<br> IL 60185, USA.</li>
+                                        <li> Pl. du Vingt Août 7,<br> 4000 Liège.</li>
                                     </ul>
                                 </div>
                                 <!-- End Single Info -->
@@ -72,8 +51,7 @@
                                     <i class="lni lni-phone"></i>
                                     <h3>Call us on</h3>
                                     <ul>
-                                        <li><a href="tel:+18005554400">+1 800 555 44 00 (Toll free)</a></li>
-                                        <li><a href="tel:+321556667890">+321 55 666 7890</a></li>
+                                        <li><a href="tel:+0471918560">+4 70 91 85 66 (tarif standard)</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Info -->
@@ -82,9 +60,8 @@
                                     <i class="lni lni-envelope"></i>
                                     <h3>Mail at</h3>
                                     <ul>
-                                        <li><a href="mailto:support@shopgrids.com">support@shopgrids.com</a>
+                                        <li><a href="mailto:support@shopgrids.com">unideli@ulg.ac.be</a>
                                         </li>
-                                        <li><a href="mailto:career@shopgrids.com">career@shopgrids.com</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Info -->

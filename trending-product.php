@@ -20,18 +20,18 @@ function renderProduct($product)
             <div class="product-image">
                 <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="#">
                 <div class="button">
-                    <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                    <a href="product-details.html" class="btn">🍽️ Add to cart</a>
                 </div>
             </div>
             <div class="product-info">
-                <span class="category"><?php echo htmlspecialchars($product['category']); ?></span>
+                <span class="category"><?php echo ucfirst(htmlspecialchars($product['category'])); ?></span>
                 <h4 class="title">
                     <a href="product-details.html"><?php echo htmlspecialchars($product['name']); ?></a>
                 </h4>
                 <div class="price">
-                    <span><?php echo '$' . number_format($product['price'], 2); ?></span>
+                    <span><?php echo '€' . number_format($product['price'], 2); ?></span>
                     <?php if (!empty($product['discount_price'])): ?>
-                        <span class="discount-price"><?php echo '$' . number_format($product['discount_price'], 2); ?></span>
+                        <span class="discount-price"><?php echo '€' . number_format($product['discount_price'], 2); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
@@ -47,9 +47,7 @@ function renderProduct($product)
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Trending Product</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                        suffered alteration in some form.</p>
+                    <h2>Trending food ❤️‍🔥</h2>
                 </div>
             </div>
         </div>

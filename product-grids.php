@@ -70,18 +70,18 @@ function renderProduct($product)
             <div class="product-image">
                 <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="#">
                 <div class="button">
-                    <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                    <a href="product-details.html" class="btn">🍽️ Add to cart</a>
                 </div>
             </div>
             <div class="product-info">
-                <span class="category"><?php echo htmlspecialchars($product['category']); ?></span>
+                <span class="category"><?php echo ucfirst(htmlspecialchars($product['category'])); ?></span>
                 <h4 class="title">
                     <a href="product-details.html"><?php echo htmlspecialchars($product['name']); ?></a>
                 </h4>
                 <div class="price">
-                    <span><?php echo '$' . number_format($product['price'], 2); ?></span>
+                    <span><?php echo '€' . number_format($product['price'], 2); ?></span>
                     <?php if (!empty($product['discount_price'])): ?>
-                        <span class="discount-price"><?php echo '$' . number_format($product['discount_price'], 2); ?></span>
+                        <span class="discount-price"><?php echo '€' . number_format($product['discount_price'], 2); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
@@ -146,32 +146,11 @@ function renderProduct($product)
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Shop Grid</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.php"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="javascript:void(0)">Shop</a></li>
-                        <li>Shop Grid</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
     <!-- Start Product Grids -->
     <section class="product-grids section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-12 product-sidebar-container">
                     <!-- Start Product Sidebar -->
                     <div class="product-sidebar">
 
@@ -212,7 +191,7 @@ function renderProduct($product)
                                                 id="category_<?php echo htmlspecialchars($category['category']); ?>" <?php echo in_array($category['category'], $category_filter) ? 'checked' : ''; ?>>
                                             <label class="form-check-label"
                                                 for="category_<?php echo htmlspecialchars($category['category']); ?>">
-                                                <?php echo htmlspecialchars($category['category']); ?>
+                                                <?php echo ucfirst(htmlspecialchars($category['category'])); ?>
                                             </label>
                                         </div>
                                     <?php endforeach; ?>

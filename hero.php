@@ -10,14 +10,13 @@
                         <div class="single-slider"
                             style="background-image: url(assets/images/hero/slider-bg1.jpg);">
                             <div class="content">
-                                <h2><span>No restocking fee ($35 savings)</span>
-                                    M75 Sport Watch
-                                </h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <h3><span>Now Only</span> $320.99</h3>
-                                <div class="button">
-                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                <div>
+                                    <h2>
+                                        <span>Nouveau partenaire</span>
+                                        L'Échafaudage 🍲
+                                    </h2>
+                                    <p>La cafétéria vous propose des plats et des produits le plus souvent possible issus du circuit court, de producteurs locaux et/ou de l’agriculture biologique – le tout dans un esprit fait maison !</p>
+                                    <h3><span>Offre spéciale : boisson offerte jusqu'au 15/11! 🔥</h3>
                                 </div>
                             </div>
                         </div>
@@ -26,14 +25,12 @@
                         <div class="single-slider"
                             style="background-image: url(assets/images/hero/slider-bg2.jpg);">
                             <div class="content">
-                                <h2><span>Big Sale Offer</span>
-                                    Get the Best Deal on CCTV Camera
-                                </h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <h3><span>Combo Only:</span> $590.00</h3>
-                                <div class="button">
-                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                <div>
+                                    <h2><span>Nouveau partenaire</span>
+                                    Pasta-Time 🍝
+                                    </h2>
+                                    <p>Snack spécialisé dans les pâtes à emporter, Pasta-Time vous fait voyager jusqu'en Italie le temps de votre pause de midi. Pasta-Time propose également paninis et autres spécialités italiennes.</p>
+                                    <h3><span>Offre spéciale : Supplément fromage gratuit 🔥</span></h3>
                                 </div>
                             </div>
                         </div>
@@ -44,16 +41,16 @@
             </div>
             <div class="col-lg-4 col-12">
                 <div class="row">
-                    <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
+                    <div class="col-lg-12 col-md-6 col-12">
                         <!-- Start Small Banner -->
                         <div class="hero-small-banner"
-                            style="background-image: url('assets/images/hero/slider-bnr.jpg');">
-                            <div class="content">
+                            style="background-image: url('assets/images/hero/slider-bnr.png');">
+                            <div class="content fries">
                                 <h2>
-                                    <span>New line required</span>
-                                    iPhone 12 Pro Max
+                                    <span></span>
+                                    Suggestion du jour : boulet frite 😋
                                 </h2>
-                                <h3>$259.99</h3>
+                                <h3>€3.99</h3>
                             </div>
                         </div>
                         <!-- End Small Banner -->
@@ -62,11 +59,8 @@
                         <!-- Start Small Banner -->
                         <div class="hero-small-banner style2">
                             <div class="content">
-                                <h2>Weekly Sale!</h2>
-                                <p>Saving up to 50% off all online store items this week.</p>
-                                <div class="button">
-                                    <a class="btn" href="product-grids.html">Shop Now</a>
-                                </div>
+                                <h2>Offre de lancement</h2>
+                                <p>Economisez avec la livraision gratuite jusqu'au 15/11! 💵</p>
                             </div>
                         </div>
                         <!-- Start Small Banner -->

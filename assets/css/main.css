@@ -8152,3 +8152,33 @@ blockquote span {
     display: none;
   }
 }
+
+.single-slider .content div{
+  background-color: rgba(255, 255, 255, 0.95);
+  padding:20px;
+}
+
+.hero-small-banner .content h2{
+  color: white;
+}
+
+.hero-small-banner .content h2 span{
+  color: white !important;
+}
+
+.hero-small-banner div .content{
+  align-self: flex-end;
+}
+
+.hero-small-banner .fries{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.product-grids{
+  padding-top: 30px !important;
+}

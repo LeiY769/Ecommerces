@@ -22,26 +22,6 @@
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Login</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Login</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
     <!-- Start Account Login Area -->
     <div class="account-login section">
         <div class="container">
@@ -52,13 +32,16 @@
                             <div class="title">
                                 <h3>Login Now</h3>
                                 <?php
-                                if (isset($_GET['error'])) {
-                                    $err = $_GET['error'];
-                                    if ($err == 1)
-                                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                                    if ($err == 2)
-                                        echo "<p style='color:red'>Utilisateur ou mot de passe incomplet</p>";
-                                }
+                                    if (isset($_GET['error'])) {
+                                        $err = $_GET['error'];
+                                        if ($err == 1)
+                                            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                                        if ($err == 2)
+                                            echo "<p style='color:red'>Utilisateur ou mot de passe incomplet</p>";
+                                    }
+                                    if (isset($_GET['success'])){
+                                        echo "<p style=\"color:green;\">".htmlspecialchars($_GET['success'])."</p><br><br>";
+                                    }
                                 ?>
                                 <div class="form-group input-group">
                                     <label for="reg-fn">Username</label>
@@ -73,7 +56,6 @@
                                         <input type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
                                         <label class="form-check-label">Remember me</label>
                                     </div>
-                                    <a class="lost-pass" href="account-password-recovery.html">Forgot password?</a>
                                 </div>
                                 <div class="button">
                                     <button class="btn" type="submit" id='submit' value='login'>Login</button>
@@ -81,16 +63,19 @@
                                 <p class="outer-link">Don't have an account? <a href="register.php">Register here </a>
                                 </p>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <canvas id="confetti" style="position:absolute; top:0; left:0; z-index:100000;"></canvas>
+
     <!-- End Account Login Area -->
-
-
     <!-- Include Footer Area -->
     <?php include 'footer.php'; ?>
-
+    
     <!-- ========================= JS here ========================= -->
+    <script src="assets/js/main.js"></script>
 </body>
