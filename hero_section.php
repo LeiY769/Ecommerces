@@ -12,11 +12,11 @@
                             <div class="content">
                                 <div>
                                     <h2>
-                                        <span>Nouveau partenaire</span>
+                                        <span>New partnership</span>
                                         L'Échafaudage 🍲
                                     </h2>
-                                    <p>La cafétéria vous propose des plats et des produits le plus souvent possible issus du circuit court, de producteurs locaux et/ou de l’agriculture biologique – le tout dans un esprit fait maison !</p>
-                                    <h3><span>Offre spéciale : boisson offerte jusqu'au 15/11! 🔥</h3>
+                                    <p>The cafeteria offers you dishes and products that are as often as possible sourced from short supply chains, local producers and/or organic farming – all in a home-made spirit. !</p>
+                                    <h3><span>Special offer: Free drink until 11/15! 🔥</h3>
                                 </div>
                             </div>
                         </div>
@@ -26,11 +26,11 @@
                             style="background-image: url(assets/images/hero/slider-bg2.jpg);">
                             <div class="content">
                                 <div>
-                                    <h2><span>Nouveau partenaire</span>
+                                    <h2><span>New partnership</span>
                                     Pasta-Time 🍝
                                     </h2>
-                                    <p>Snack spécialisé dans les pâtes à emporter, Pasta-Time vous fait voyager jusqu'en Italie le temps de votre pause de midi. Pasta-Time propose également paninis et autres spécialités italiennes.</p>
-                                    <h3><span>Offre spéciale : Supplément fromage gratuit 🔥</span></h3>
+                                    <p>Pasta-Time, a snack bar specializing in takeaway pasta, takes you on a trip to Italy during your lunch break. Pasta-Time also offers paninis and other Italian specialties.</p>
+                                    <h3><span>Special offer: Free cheese supplement ! 🔥</span></h3>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="content fries">
                                 <h2>
                                     <span></span>
-                                    Suggestion du jour : boulet frite 😋
+                                    Suggestion of the day: fried meatballs 😋
                                 </h2>
                                 <h3>€3.99</h3>
                             </div>
@@ -59,8 +59,8 @@
                         <!-- Start Small Banner -->
                         <div class="hero-small-banner style2">
                             <div class="content">
-                                <h2>Offre de lancement</h2>
-                                <p>Economisez avec la livraision gratuite jusqu'au 15/11! 💵</p>
+                                <h2>Launch offer</h2>
+                                <p>Save money with free delivery until 11/15! 💵</p>
                             </div>
                         </div>
                         <!-- Start Small Banner -->
