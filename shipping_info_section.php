@@ -1,0 +1,38 @@
+
+<section class="shipping-info">
+    <div class="container">
+        <ul>
+            <!-- Free Shipping -->
+            <li>
+                <div class="media-icon">
+                    <i class="lni lni-delivery"></i>
+                </div>
+                <div class="media-body">
+                    <h5>Free Shipping</h5>
+                    <span>On order over €50</span>
+                </div>
+            </li>
+            <!-- Money Return -->
+            <li>
+                <div class="media-icon">
+                    <i class="lni lni-support"></i>
+                </div>
+                <div class="media-body">
+                    <h5>24/7 Support.</h5>
+                    <span>Order assistance when you need it.</span>
+                </div>
+            </li>
+            <!-- Support 24/7 -->
+            <li>
+                <div class="media-icon">
+                    <i class="lni lni-credit-cards"></i>
+                </div>
+                <div class="media-body">
+                    <h5>Online Payment.</h5>
+                    <span>Secure Payment Services.</span>
+                </div>
+            </li>
+            <!-- Safe Payment -->
+        </ul>
+    </div>
+</section>

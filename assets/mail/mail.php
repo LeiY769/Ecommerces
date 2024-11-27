@@ -38,11 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 } else {
     // Rediriger vers la page de contact si la méthode de requête n'est pas POST
-    header("Location: ../../contact.php");
+    header("Location: ../../contact_page.php");
     exit();
 }
     */
 // Rediriger vers la page de contact si la méthode de requête n'est pas POST
-header("Location: ../../contact.php");
+header("Location: ../../contact_page.php");
 exit();
 ?>
