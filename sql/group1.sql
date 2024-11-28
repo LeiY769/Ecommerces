@@ -89,7 +89,9 @@ INSERT INTO `Product`(`name`, `category`, `image`, `price`, `quantity_in_stock`,
 ('Sandwich', 'lunch', 'assets/images/products/lunch/sandwich.jpg', '2.99', '300', NULL),
 ('Biscuit', 'snacks', 'assets/images/products/snacks/leo.jpg', '2.01', '200', NULL),
 ('Waffel', 'snacks', 'assets/images/products/snacks/waffel.jpg','2.5', '300', NULL),
-('Candy', 'snacks', 'assets/images/products/snacks/sweet.jpg', '1.99', '200', NULL);
+('Candy', 'snacks', 'assets/images/products/snacks/sweet.jpg', '1.99', '200', NULL),
+('Lobster', 'lunch', 'assets/images/products/lunch/lobster.jpg', '13.99', '50', NULL),
+('Salad of salmon', 'lunch', 'assets/images/products/lunch/salmon.jpg', '8.99', '80', NULL);
 
 INSERT INTO `Customer`(`username`, `password`, `first_name`, `last_name`, `email`) VALUES
 ('michel', '123', 'Michel', 'Dupont', 'michel@gmail.com');
