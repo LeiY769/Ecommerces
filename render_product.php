@@ -12,6 +12,8 @@ function renderProduct($product)
                         product-id="<?php echo htmlspecialchars($product['product_id']); ?>"
                         product-name="<?php echo htmlspecialchars($product['name']); ?>"
                         product-price="<?php echo htmlspecialchars($product['price']); ?>"
+                        product-discount = "<?php echo htmlspecialchars($product['discount_price']); ?>"
+                        product-has-discount = "<?php echo htmlspecialchars($product['discount_price'] != NULL); ?>"
                         product-image="<?php echo htmlspecialchars($product['image']); ?>">
                         🍽️ Add
                     </button>

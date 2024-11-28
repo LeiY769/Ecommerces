@@ -13,7 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && isse
     }
     $productId = $_POST['product_id'];
     $productName = $_POST['product_name'];
-    $productPrice = $_POST['product_price'];
+    $productHasDiscount = $_POST['product_has_discount'];
+    if($productHasDiscount){
+        $productPrice = $_POST['product_discount'];
+    }
+    else
+        $productPrice = $_POST['product_price'];
     $productImage = $_POST['product_image'];
 
     if (isset($_SESSION['cart'][$productId])) {

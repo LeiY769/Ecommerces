@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fclose($csv_file);
     if ($found) {
         $error = "🚨 Password is very frequent.";
-        header("Location: ../register.php?error=" . urlencode($error));
+        header("Location: ../register_page.php?error=" . urlencode($error));
         exit();
     }
 
