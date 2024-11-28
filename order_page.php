@@ -23,7 +23,7 @@
                 </div>
             </div>
             <?php if ($error): ?>
-                <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
+                <p style="color:red; padding-bottom:30px;">🚨<?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
             <div class="cart-list-head">
                 <!-- Cart List Title -->

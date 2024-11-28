@@ -77,3 +77,7 @@ function logout()
         exit;
     }
 }
+
+function clear_cart(){
+    unset($_SESSION['cart']);
+}

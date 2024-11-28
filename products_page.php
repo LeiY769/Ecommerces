@@ -36,14 +36,36 @@ if (!empty($category_filter)) {
     }
 }
 
-$conditions_sql = 'WHERE 1=1';
-if (!empty($price_conditions) && !empty($category_conditions)) {
-    $conditions_sql = 'WHERE (' . implode(' OR ', $price_conditions) . ') AND (' . implode(' OR ', $category_conditions) . ')';
-} elseif (!empty($price_conditions)) {
-    $conditions_sql = 'WHERE ' . implode(' OR ', $price_conditions);
-} elseif (!empty($category_conditions)) {
-    $conditions_sql = 'WHERE ' . implode(' OR ', $category_conditions);
+// Fetch search
+$search_condition = "";
+if(isset($_GET['search'])){
+    $search_condition = $_GET['search'];
 }
+
+$conditions_sql = 'WHERE 1=1';
+if (!empty($price_conditions)) {
+    $conditions_sql = 'WHERE (' . implode(' OR ', $price_conditions) .')';
+}
+if (!empty($category_conditions)) {
+    if (!empty($price_conditions)) {
+        $conditions_sql .= 'AND (' . implode(' OR ', $category_conditions) . ')';
+    }
+    else{
+        $conditions_sql = 'WHERE (' . implode(' OR ', $category_conditions).')';
+    }
+}
+if (!empty($search_condition)) {
+    if (!empty($price_conditions) || !empty($category_conditions)) {
+        $conditions_sql .= 'AND name LIKE \'%'.$search_condition.'%\'';
+    }
+    else{
+        $conditions_sql = 'WHERE name LIKE \'%'.$search_condition.'%\'';
+    }
+}
+
+echo $conditions_sql;
+echo print_r($params);
+
 $total_products = get_products_filtered_db($conditions_sql, $params);
 $total_pages = ceil($total_products / $products_per_page);
 
@@ -182,6 +204,14 @@ $products = get_products_filtered_paged_db($conditions_sql, $products_per_page, 
         function submitForm() {
             var form = document.querySelector('.product-sidebar form');
             var formData = new FormData(form);
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            if (urlParams.has('page')){
+                formData.append('page', urlParams.get('page'));
+            }
+            if (urlParams.has('search')){
+                formData.append('search', urlParams.get('search'));
+            }
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'products_page.php?' + new URLSearchParams(formData).toString(), true);
             xhr.onload = function () {

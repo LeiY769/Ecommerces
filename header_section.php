@@ -97,9 +97,11 @@ $categories = get_categories_db();
                                     </div>
                                 </div>
                                 <div class="search-input">
-                                    <input type="text" name="search" placeholder="Search">
+                                    <input type="text" name="search" placeholder="">
                                 </div>
                                 <div class="search-btn">
+                                        <!-- <button type="submit" form="order_form" class="btn">Checkout
+                                        </button> -->
                                     <button><i class="lni lni-search-alt"></i></button>
                                 </div>
                             </form>

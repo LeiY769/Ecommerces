@@ -1,8 +1,8 @@
-Traduire en anglais les sections français
-Retirer section inutile index.php
-config file pour mdp db
-fix filtre page products
-verifier que le filtre des mdps est toujours fonctionnel
+- Message quand y a aucun produits à afficher
+- Clean la db 
+
+
+
 
 
 - Montrer cart quand on est pas log

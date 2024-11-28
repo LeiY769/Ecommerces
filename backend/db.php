@@ -80,38 +80,53 @@ function get_promotions(){
 
 function get_max_order_id(){
     $conn = connect_to_db();
-    $stmt = $conn->prepare("SELECT MAX(order_id) FROM Orders");
+    $stmt = $conn->prepare("SELECT MAX(order_id) FROM Order_table");
     $stmt->execute();
     return $stmt->fetchColumn();
 }
 
-function create_order_table($order_id,$customer_id, $current_date){
+function product_exists_db($id){
     $conn = connect_to_db();
-    $stmt = $conn->prepare("INSERT INTO Orders (order_id,customer_id, order_date) VALUES (:order_id,:customer_id, :order_date)");
+    $stmt = $conn->prepare("SELECT * FROM Product WHERE product_id = :product_id");
+    $stmt->bindParam(':product_id', $id);
+    $stmt->execute();
+    return $stmt->rowCount() != 0;
+}
+
+function product_name_db($id){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("SELECT name FROM Product WHERE product_id = :product_id LIMIT 1");
+    $stmt->bindParam(':product_id', $id);
+    $stmt->execute();
+    return $stmt->fetch()[0];
+}
+
+function create_order_db($order_id, $customer_id, $current_date){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("INSERT INTO Order_table (order_id,customer_id, order_date) VALUES (:order_id,:customer_id, :order_date)");
     $stmt->bindParam(':order_id', $order_id);
     $stmt->bindParam(':customer_id', $customer_id);
     $stmt->bindParam(':order_date', $current_date);
     return $stmt->execute();
 }
 
-
 function get_product_quantity($product_id){
     $conn = connect_to_db();
-    $stmt = $conn->prepare("SELECT stock FROM Product WHERE product_id = :product_id");
+    $stmt = $conn->prepare("SELECT quantity_in_stock FROM Product WHERE product_id = :product_id");
     $stmt->bindParam(':product_id', $product_id);
     $stmt->execute();
     return $stmt->fetchColumn();
 }
 
-function remove_product($product, $quantity){
+function remove_product($product_id, $quantity){
     $conn = connect_to_db();
-    $stmt = $conn->prepare("UPDATE Product SET stock = stock - :quantity WHERE product_id = :product_id");
+    $stmt = $conn->prepare("UPDATE Product SET quantity_in_stock = quantity_in_stock - :quantity WHERE product_id = :product_id");
     $stmt->bindParam(':quantity', $quantity);
-    $stmt->bindParam(':product_id', $product['product_id']);
+    $stmt->bindParam(':product_id', $product_id);
     return $stmt->execute();
 }
 
-function create_order_detail($order,$product_id, $quantity){
+function create_order_detail($order, $product_id, $quantity){
     $conn = connect_to_db();
     $stmt = $conn->prepare("INSERT INTO Order_detail (order_id, product_id, quantity) VALUES (:order_id, :product_id, :quantity)");
     $stmt->bindParam(':order_id', $order);
@@ -119,6 +134,4 @@ function create_order_detail($order,$product_id, $quantity){
     $stmt->bindParam(':quantity', $quantity);
     return $stmt->execute();
 }
-
-
 ?>
