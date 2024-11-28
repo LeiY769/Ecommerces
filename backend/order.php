@@ -27,6 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
         }
     }
+    if(empty($cartItems)){
+        header('Location: ../order_page.php?error=Your order is empty😥');
+        exit;
+    }
     $newOrderId = get_max_order_id()+1;
     $customerId = get_user_from_user_name_db($_SESSION['username'])["customer_id"];
     $timestamp = date('Y-m-d H:i:s');
@@ -37,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         create_order_detail($newOrderId, $data["product_id"], $data["quantity"]);
     }
     clear_cart();
-    header('Location: ../index.php');
+    header('Location: ../checkout_page.php');
     exit;
 }
 
