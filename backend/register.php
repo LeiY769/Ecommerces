@@ -20,6 +20,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../register_page.php?error=" . urlencode($error));
         exit();
     }
+    $csv_file = fopen("../sql/common.csv", "r");
+    $found = false;
+    while (($data = fgetcsv($csv_file)) !== false) {
+        if (isset($data[0]) && $data[0] === $password) {
+            $found = true;
+            break;
+        }
+    }
+    fclose($csv_file);
+    if ($found) {
+        $error = "🚨 Password is very frequent.";
+        header("Location: ../register_page.php?error=" . urlencode($error));
+        exit();
+    }
+
+    
 
     if ($password !== $password_confirm) {
         $error = "🚨 Passwords do not match.";

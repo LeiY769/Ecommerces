@@ -25,12 +25,9 @@ CREATE TABLE IF NOT EXISTS `Product` (
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `Order_table`(
-    `order_id` BIGINT AUTO_INCREMENT PRIMARY KEY,
+    `order_id` BIGINT PRIMARY KEY,
     `customer_id` BIGINT NOT NULL,
-    `order_date` DATE NOT NULL,
-    `order_time` TIME NOT NULL,
-    `position` VARCHAR(100) NOT NULL,
-
+    `order_date` DATETIME NOT NULL,
     FOREIGN KEY (`customer_id`) REFERENCES `Customer`(`customer_id`)
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
@@ -97,8 +94,8 @@ INSERT INTO `Product`(`name`, `category`, `image`, `price`, `quantity_in_stock`,
 INSERT INTO `Customer`(`username`, `password`, `first_name`, `last_name`, `email`) VALUES
 ('michel', '123', 'Michel', 'Dupont', 'michel@gmail.com');
 
-INSERT INTO `Order_table`(`customer_id`, `order_date`, `order_time`, `position`) VALUES
-('1', '2015-03-20', '12:30:00', 'Rue de la gare 12, 1000 Bruxelles');
+INSERT INTO `Order_table`(`order_id`,`customer_id`, `order_date`) VALUES
+('1','1', '2015-03-20 12:00:00');
 
 INSERT INTO `Delivery`(`name`, `phone_number`) VALUES
 ('Jean', '0478/12.34.56'),

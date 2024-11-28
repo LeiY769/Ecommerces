@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const button = event.target;
             const productId = button.getAttribute("product-id");
             const productName = button.getAttribute("product-name");
+            const producthasdiscount = button.getAttribute("product-has-discount");
+            const productDiscount = button.getAttribute("product-discount");
             const productPrice = button.getAttribute("product-price");
             const productImage = button.getAttribute("product-image");
             console.log(productName);
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     product_id: productId,
                     product_name: productName,
                     product_price: productPrice,
+                    product_has_discount: producthasdiscount,
+                    product_discount: productDiscount,
                     product_image: productImage
                 }),
             }).then(response => response.json())
