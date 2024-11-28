@@ -21,11 +21,12 @@ if (!empty($username) && !empty($password)) {
         $_SESSION['logged_in'] = true;
         header('Location: ../index.php');
         exit;
-    } else
-        header('Location: ../login_page.php?error=Wrong password');
+    } else{
+        header('Location: ../login_page.php?error=Invalid username or password🚨');
         exit;
+    }
 } else {
-    header('Location: ../login_page.php?error=Missing input data');
+    header('Location: ../login_page.php?error=Missing input data🚨');
     exit;
 }
 ?>

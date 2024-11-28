@@ -70,9 +70,9 @@ function isLoggedIn()
 function logout()
 {
     if (isset($_GET['logout']) && $_GET['logout'] == 'true') {
-        $_SESSION = array(); // Ecrase tableau de session
-        session_unset(); // Detruit toutes les variables de la session en cours
-        session_destroy(); // Destruit la session en cours
+        $_SESSION = array();
+        session_unset();
+        session_destroy();
         header('Location: login_page.php');
         exit;
     }

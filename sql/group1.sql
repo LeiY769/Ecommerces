@@ -55,14 +55,6 @@ CREATE TABLE IF NOT EXISTS `Order_detail`(
     FOREIGN KEY (`product_id`) REFERENCES `Product`(`product_id`)
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `Ordered_by`(
-    `order_id` BIGINT NOT NULL,
-    `customer_id` BIGINT NOT NULL,
-
-    FOREIGN KEY (`order_id`) REFERENCES `Order_table`(`order_id`),
-    FOREIGN KEY (`customer_id`) REFERENCES `Customer`(`customer_id`)
-)ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
 
 INSERT INTO `Product`(`name`, `category`, `image`, `price`, `quantity_in_stock`, `discount_price`) VALUES
 ('Chocolate bread', 'breakfast', 'assets/images/products/breakfast/chocolate_bread.jpg', '1.4', '500', NULL),
