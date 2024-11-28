@@ -2,6 +2,7 @@
     require_once 'backend/session.php';
     require_once 'backend/db.php';
     $title = "UniDeli - Login";
+    $error = isset($_GET['error']) ? $_GET['error'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -23,18 +24,9 @@
                         <div class="card-body">
                             <div class="title">
                                 <h3>Login Now</h3>
-                                <?php
-                                    if (isset($_GET['error'])) {
-                                        $err = $_GET['error'];
-                                        if ($err == 1)
-                                            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                                        if ($err == 2)
-                                            echo "<p style='color:red'>Utilisateur ou mot de passe incomplet</p>";
-                                    }
-                                    if (isset($_GET['success'])){
-                                        echo "<p style=\"color:green;\">".htmlspecialchars($_GET['success'])."</p><br><br>";
-                                    }
-                                ?>
+                                <?php if ($error): ?>
+                                    <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
+                                <?php endif; ?>
                                 <div class="form-group input-group">
                                     <label for="reg-fn">Username</label>
                                     <input name="username" class="form-control" type="text" id="reg-email" required>

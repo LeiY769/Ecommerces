@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         if (data.success) {
             updateCartTable(data.cart);
+            updateCartTotal(data.cart);
         } else {
             console.log("Refused reason : "+ data.error);
         }
@@ -35,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }).then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log(data.cart);
                     updateCartTable(data.cart);
+                    updateCartTotal(data.cart);
                 } else {
                     console.log("Refused reason : "+ data.error);
                 }
@@ -49,44 +50,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function updateCartTable(cart) {
-    const totalItemsElement = document.querySelector(".total-items");
-    const totalItemsCount = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
-    totalItemsElement.textContent = totalItemsCount;
-
-    const cartHeader = document.querySelector(".dropdown-cart-header span");
-    cartHeader.textContent = `${totalItemsCount} Items`;
-
-    const shoppingList = document.querySelector(".shopping-list");
+    const shoppingList = document.querySelector(".products-list");
     shoppingList.innerHTML = "";
 
     Object.entries(cart).forEach(([id, item]) => {
-        const cartItem = document.createElement("li");
-        cartItem.innerHTML = `
-            <a href="javascript:deleteItemFromNavCart(${id})" class="remove" title="Remove this item">
-                <i class="lni lni-close"></i>
-            </a>
-            <div class="cart-img-head">
-                <div class="cart-img"><img src="${item.image}" alt="${item.name} image"></div>
-            </div>
-            <div class="content">
-                <h4 class="shopping-list-text">${item.name}</h4>
-                <p class="quantity">${item.quantity}x - <span class="amount">€${item.price}</span></p>
+        const cartItemDiv = document.createElement("div");
+        cartItemDiv.classList.add("cart-single-list");
+        cartItemDiv.innerHTML = `
+            <div class="row align-items-center">
+                <div class="col-lg-1 col-md-1 col-12">
+                    <a href="javascript:void(0)"><img src="${item.image}" alt="${item.name}"></a>
+                </div>
+                <div class="col-lg-4 col-md-3 col-12">
+                    <h5 class="product-name"><a href="javascript:void(0)">${item.name}</a></h5>
+                    <p class="product-des">
+                        <span><em>Unit price :</em> €${item.price}</span>
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-12">
+                    <p class="product-des">
+                        ${item.quantity}
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-12">
+                    <p>€${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <div class="col-lg-1 col-md-2 col-12">
+                    <a class="remove-item" href="javascript:deleteItemFromCartTable(${id})" product-id="${id}"><i class="lni lni-close"></i></a>
+                </div>
+                <input type="number" value="${item.quantity}" name="quantity_${id}" hidden/>
             </div>
         `;
-        shoppingList.appendChild(cartItem);
+        shoppingList.appendChild(cartItemDiv);
     });
     const emptyMessage = document.getElementById("empty-cart");
     if(Object.entries(cart).length == 0){
-        emptyMessage.style.display = "block";
+        const emptyCartDiv = document.createElement("div");
+        emptyCartDiv.classList.add("content");
+        emptyCartDiv.id = "empty-cart";
+        emptyCartDiv.textContent = "Your order is empty 🏜️";
+        shoppingList.appendChild(emptyCartDiv);
     }
-    else{
-        emptyMessage.style.display = "none";
-    }
-
-    // Update the total amount
-    const totalAmount = Object.values(cart).reduce((acc, item) => acc + item.price * item.quantity, 0);
-    const totalAmountElement = document.querySelector(".total-amount");
-    totalAmountElement.textContent = `€${totalAmount.toFixed(2)}`;
 }
 
 function deleteItemFromCartTable(productId){
@@ -99,9 +103,8 @@ function deleteItemFromCartTable(productId){
     }).then(response => response.json())
     .then(data => {
         if (data.success) {
-            console.log(data);
-            console.log(data.cart);
-            updateNavCart(data.cart);
+            updateCartTotal(data.cart);
+            updateCartTable(data.cart);
         } else {
             console.log("Refused reason : "+ data.error);
         }
@@ -111,4 +114,11 @@ function deleteItemFromCartTable(productId){
     });
 }
 
-
+function updateCartTotal(cart){
+    const subTotalElement = document.getElementById("cart-sub-total");
+    console.log(cart);
+    const totalItemsCount = Object.values(cart).reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+    subTotalElement.textContent = "€"+totalItemsCount;
+    const totalElement = document.getElementById("cart-total");
+    totalElement.textContent = "€"+totalItemsCount;
+}

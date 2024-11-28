@@ -1,6 +1,7 @@
 <?php
     require_once 'backend/session.php';
     require_once 'backend/db.php';
+    $error = isset($_GET['error']) ? $_GET['error'] : '';
     $title = "UniDeli - Order";
 ?>
 
@@ -21,6 +22,9 @@
                     <h3>Order page</h3>
                 </div>
             </div>
+            <?php if ($error): ?>
+                <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
+            <?php endif; ?>
             <div class="cart-list-head">
                 <!-- Cart List Title -->
                 <div class="cart-list-title">
@@ -44,34 +48,10 @@
                 <!-- End Cart List Title -->
 
                 <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="assets/images/cart/01.jpg" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">
-                                    Canon EOS M50 Mirrorless Camera</a></h5>
-                            <p class="product-des">
-                                <span><em>Unit price :</em> €5</span>
-                                <span><em>Discount price :</em> €4</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <input name="quantity" class="form-control productQuantity" type="number" product-id="1">
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$910.00</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <form action="backend/order.php" method="post" id="order_form">
+                    <div class="products-list"></div>
+                </form>
                 <!-- End Single List list -->
-                 
             </div>
             <div class="row">
                 <div class="col-12">
@@ -81,13 +61,14 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
-                                        <li>Cart Subtotal<span>$2560.00</span></li>
-                                        <li>Shipping<span>Free</span></li>
-                                        <li>You Save<span>$29.00</span></li>
-                                        <li class="last">You Pay<span>$2531.00</span></li>
+                                        <li>Cart subtotal<span id="cart-sub-total">€0</span></li>
+                                        <li>Shipping <span>Free</span></li>
+                                        <li>You save<span>€3</span></li>
+                                        <li class="last">You pay<span id="cart-total">€0</span></li>
                                     </ul>
-                                    <div class="button">
-                                        <a href="checkout_page.php" class="btn">Checkout</a>
+                                    <div class="single-form form-default button">
+                                        <button type="submit" form="order_form" class="btn">Checkout
+                                        </button>
                                     </div>
                                 </div>
                             </div>

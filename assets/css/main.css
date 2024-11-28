@@ -8219,7 +8219,10 @@ blockquote span {
   width : 60px;
 }
 
-
+.count-input input{
+  padding:0px !important;
+  padding-left: 5px !important;
+}
 
 @media (max-width: 767px) {
   .count-input{
