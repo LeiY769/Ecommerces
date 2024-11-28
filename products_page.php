@@ -63,13 +63,11 @@ if (!empty($search_condition)) {
     }
 }
 
-echo $conditions_sql;
-echo print_r($params);
-
 $total_products = get_products_filtered_db($conditions_sql, $params);
 $total_pages = ceil($total_products / $products_per_page);
 
 $products = get_products_filtered_paged_db($conditions_sql, $products_per_page, $offset, $params);
+
 ?>
 
 <!DOCTYPE html>
@@ -153,6 +151,11 @@ $products = get_products_filtered_paged_db($conditions_sql, $products_per_page, 
                                     <?php foreach ($products as $product): ?>
                                         <?php renderProduct($product); ?>
                                     <?php endforeach; ?>
+                                    <?php
+                                        if (empty($products)){
+                                            echo '<div style="display:flex; justify-content:center; align-items:center; height:400px;">No results for your search 😥</div>';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="row">
