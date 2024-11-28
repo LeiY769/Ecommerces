@@ -78,4 +78,47 @@ function get_promotions(){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function get_max_order_id(){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("SELECT MAX(order_id) FROM Orders");
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
+function create_order_table($order_id,$customer_id, $current_date){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("INSERT INTO Orders (order_id,customer_id, order_date) VALUES (:order_id,:customer_id, :order_date)");
+    $stmt->bindParam(':order_id', $order_id);
+    $stmt->bindParam(':customer_id', $customer_id);
+    $stmt->bindParam(':order_date', $current_date);
+    return $stmt->execute();
+}
+
+
+function get_product_quantity($product_id){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("SELECT stock FROM Product WHERE product_id = :product_id");
+    $stmt->bindParam(':product_id', $product_id);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
+function remove_product($product, $quantity){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("UPDATE Product SET stock = stock - :quantity WHERE product_id = :product_id");
+    $stmt->bindParam(':quantity', $quantity);
+    $stmt->bindParam(':product_id', $product['product_id']);
+    return $stmt->execute();
+}
+
+function create_order_detail($order,$product_id, $quantity){
+    $conn = connect_to_db();
+    $stmt = $conn->prepare("INSERT INTO Order_detail (order_id, product_id, quantity) VALUES (:order_id, :product_id, :quantity)");
+    $stmt->bindParam(':order_id', $order);
+    $stmt->bindParam(':product_id', $product_id);
+    $stmt->bindParam(':quantity', $quantity);
+    return $stmt->execute();
+}
+
+
 ?>
