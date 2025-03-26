@@ -20,7 +20,7 @@ This project is open-source and available for modification and distribution.
 
 ## This project had getting the maximum score of 30/30
 
-##Contributors 
+## Contributors 
 
 - Simon Gardier
 - Lei Yang
